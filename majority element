@@ -1,0 +1,61 @@
+//{ Driver Code Starts
+// Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+// User function template for C++
+
+class Solution {
+  public:
+    int majorityElement(vector<int>& arr) {
+
+        unordered_map<int,int>map;
+        for(int i:arr){
+            map[i]++;
+        }
+        int maxi = 0;
+        int max =  INT_MIN;
+        for(auto &pair:map){
+            if(pair.second>max){
+                max = pair.second;
+                maxi = pair.first;
+            }
+        }return max > arr.size() / 2 ? maxi : -1;
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+
+    int t;
+    cin >> t;
+    cin.ignore();
+    while (t--) {
+        int n;
+        vector<int> a, b;
+        string input;
+        getline(cin, input);
+        stringstream ss(input);
+        int num;
+        while (ss >> num)
+            a.push_back(num);
+
+        Solution obj;
+        cout << obj.majorityElement(a) << endl;
+    }
+
+    return 0;
+}
+
+// } Driver Code Ends
+
+
+
+
+
+//This is the code for finding majority element in an array.So i've tried solving this problem using hashmap.
+  where it first counts the frequency of each element that exist in the array and then pick out the greatest frequency i.e count of the element and then it returns the most frequently occured element.
