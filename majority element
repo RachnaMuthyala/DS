@@ -57,5 +57,4 @@ int main() {
 
 
 
-//This is the code for finding majority element in an array.So i've tried solving this problem using hashmap.
-  where it first counts the frequency of each element that exist in the array and then pick out the greatest frequency i.e count of the element and then it returns the most frequently occured element.
+
