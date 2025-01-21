@@ -1,11 +1,4 @@
-//{ Driver Code Starts
-// Initial template for C++
 
-#include <bits/stdc++.h>
-using namespace std;
-
-
-// } Driver Code Ends
 // User function template for C++
 
 class Solution {
@@ -27,32 +20,34 @@ class Solution {
     }
 };
 
-//{ Driver Code Starts.
 
-int main() {
 
-    int t;
-    cin >> t;
-    cin.ignore();
-    while (t--) {
-        int n;
-        vector<int> a, b;
-        string input;
-        getline(cin, input);
-        stringstream ss(input);
-        int num;
-        while (ss >> num)
-            a.push_back(num);
 
-        Solution obj;
-        cout << obj.majorityElement(a) << endl;
-    }
+//Another method
 
-    return 0;
-}
+int val=arr[0];
+        int count=1;
+        for(int i=1;i<arr.size();i++){
+            if(arr[i]==val){
+                count++;
+            }
+            else{
+                count--;
+                if(count==0){
+                    val=arr[i];
+                    count++;
+                }
+            }
+        }
+        count=0;
+        for(int num:arr){
+            if(num==val)
+                count++;
+            }
+    
+    return count > arr.size() / 2 ? val : -1;
 
-// } Driver Code Ends
-
+   
 
 
 
